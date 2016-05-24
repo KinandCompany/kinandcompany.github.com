@@ -93,10 +93,11 @@ a {
 	text-decoration: none !important;
 }
 
-
-a:hover {
-	border-bottom: solid 2px;
+a.blog:hover {
+	color: blue;
 }
+
+
 
 
 </style>
@@ -123,7 +124,7 @@ a:hover {
 
 	 function spectrum(){
 	    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-	    $('a').animate( { color: hue }, 2000);
+	    $('a.blog').animate( { color: hue }, 2000);
 	    spectrum();
 	 }
 
