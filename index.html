@@ -93,18 +93,13 @@ a {
 	text-decoration: none !important;
 }
 
-a.blog {
-	color: blue;
-	border-bottom: solid 2px;
-	text-decoration: none !important;
-}
 
 a.blog:hover {
-	color: peachpuff;
+	color: blue;
 }
 
 a:hover {
-	border-bottom: none;
+	border-bottom: solid 2px;
 }
 
 
@@ -113,6 +108,20 @@ a:hover {
 <html>
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="jquery.color.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	 spectrum();
+
+	 function spectrum(){
+	    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+	    $('a.blog').animate( { color: hue }, 2000);
+	    spectrum();
+	 }
+
+	});
+</script>
 <title>KIN & COMPANY</title>
 
 <script>
