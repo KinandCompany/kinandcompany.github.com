@@ -420,7 +420,6 @@ class AdminBaseController
 
         switch ($type) {
             case 'configuration':
-            case 'config':
             case 'system':
                 $permissions[] = 'admin.configuration';
                 break;
@@ -804,6 +803,11 @@ class AdminBaseController
         $proute    = base64_decode($uri->param('proute'));
         $type      = $uri->param('type');
         $field     = $uri->param('field');
+
+        $event = $this->grav->fireEvent('onAdminCanSave', new Event(['controller' => &$this]));
+        if (!$event['can_save']) {
+            return false;
+        }
 
         $this->taskRemoveMedia();
 

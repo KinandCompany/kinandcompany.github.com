@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/system/blueprints/config/site.yaml',
-    'modified' => 1485132461,
+    'modified' => 1483395418,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SITE',
         'form' => [
@@ -19,13 +19,6 @@ return [
                             'size' => 'large',
                             'placeholder' => 'PLUGIN_ADMIN.SITE_TITLE_PLACEHOLDER',
                             'help' => 'PLUGIN_ADMIN.SITE_TITLE_HELP'
-                        ],
-                        'default_lang' => [
-                            'type' => 'text',
-                            'label' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG',
-                            'size' => 'vsmall',
-                            'placeholder' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG_PLACEHOLDER',
-                            'help' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG_HELP'
                         ],
                         'author.name' => [
                             'type' => 'text',

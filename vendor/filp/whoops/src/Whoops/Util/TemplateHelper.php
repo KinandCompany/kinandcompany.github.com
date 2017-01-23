@@ -60,8 +60,6 @@ class TemplateHelper
             $flags |= ENT_IGNORE;
         }
 
-        $raw = str_replace(chr(9), '    ', $raw);
-        
         return htmlspecialchars($raw, $flags, "UTF-8");
     }
 

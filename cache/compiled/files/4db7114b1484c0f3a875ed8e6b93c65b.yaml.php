@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/system/config/system.yaml',
-    'modified' => 1485132828,
+    'modified' => 1483395418,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -47,7 +47,6 @@ return [
                 'twig' => false
             ],
             'twig_first' => false,
-            'never_cache_twig' => false,
             'events' => [
                 'page' => true,
                 'twig' => true
@@ -105,14 +104,13 @@ return [
             'prefix' => 'g',
             'lifetime' => 604800,
             'gzip' => false,
-            'allow_webserver_gzip' => false,
             'redis' => [
                 'socket' => false
             ]
         ],
         'twig' => [
             'cache' => true,
-            'debug' => false,
+            'debug' => true,
             'auto_reload' => true,
             'autoescape' => false,
             'undefined_functions' => true,

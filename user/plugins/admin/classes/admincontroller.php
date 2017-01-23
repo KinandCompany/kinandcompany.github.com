@@ -958,11 +958,12 @@ class AdminController extends AdminBaseController
         $type    = isset($data['type']) ? $data['type'] : '';
 
         if (!$this->authorizeTask('uninstall ' . $type, ['admin.' . $type, 'admin.super'])) {
-            $json_response = [
+            $this->admin->json_response = [
                 'status'  => 'error',
                 'message' => $this->admin->translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK')
             ];
-            echo json_encode($json_response);exit;
+
+            return false;
         }
 
         //check if there are packages that have this as a dependency. Abort and show which ones
@@ -976,31 +977,31 @@ class AdminController extends AdminBaseController
                         $dependent_packages) . "</cyan> depends on this package. Please remove it first.";
             }
 
-            $json_response = ['status' => 'error', 'message' => $message];
-            echo json_encode($json_response);exit;
+            $this->admin->json_response = ['status' => 'error', 'message' => $message];
+
+            return false;
         }
 
         try {
             $dependencies = $this->admin->dependenciesThatCanBeRemovedWhenRemoving($package);
             $result       = Gpm::uninstall($package, []);
         } catch (\Exception $e) {
-            $json_response = ['status' => 'error', 'message' => $e->getMessage()];
-            echo json_encode($json_response);exit;
+            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+
+            return false;
         }
 
         if ($result) {
-            $json_response = [
+            $this->admin->json_response = [
                 'status'       => 'success',
                 'dependencies' => $dependencies,
                 'message'      => $this->admin->translate(is_string($result) ? $result : 'PLUGIN_ADMIN.UNINSTALL_SUCCESSFUL')
             ];
-            echo json_encode($json_response);exit;
         } else {
-            $json_response = [
+            $this->admin->json_response = [
                 'status'  => 'error',
                 'message' => $this->admin->translate('PLUGIN_ADMIN.UNINSTALL_FAILED')
             ];
-            echo json_encode($json_response);exit;
         }
 
         return true;
@@ -1101,7 +1102,7 @@ class AdminController extends AdminBaseController
      */
     protected function taskClearCache()
     {
-        if (!$this->authorizeTask('clear cache', ['admin.cache', 'admin.super', 'admin.maintenance'])) {
+        if (!$this->authorizeTask('clear cache', ['admin.cache', 'admin.super'])) {
             return false;
         }
 

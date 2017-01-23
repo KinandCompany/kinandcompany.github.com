@@ -1,31 +1,31 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1485157634,
-    'checksum' => 'ae4dc6d4448b68ddf3b8d3b08a2a795e',
+    'timestamp' => 1484586664,
+    'checksum' => '3dd14ff10c49a86b344f69fb4536307a',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
                 'file' => 'system/blueprints/config/media.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ],
             'site' => [
                 'file' => 'system/blueprints/config/site.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ],
             'streams' => [
                 'file' => 'system/blueprints/config/streams.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ],
             'system' => [
                 'file' => 'system/blueprints/config/system.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ]
         ],
         'user/plugins' => [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/blueprints.yaml',
-                'modified' => 1485132656
+                'modified' => 1483395432
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/blueprints.yaml',
@@ -33,7 +33,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
-                'modified' => 1485132651
+                'modified' => 1483397285
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
@@ -78,13 +78,6 @@ return [
                 'label' => 'PLUGIN_ADMIN.SITE_TITLE',
                 'size' => 'large',
                 'name' => 'site.title',
-                'validation' => 'loose'
-            ],
-            'site.default_lang' => [
-                'type' => 'text',
-                'label' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG',
-                'size' => 'vsmall',
-                'name' => 'site.default_lang',
                 'validation' => 'loose'
             ],
             'site.author' => [
@@ -540,20 +533,6 @@ return [
                 'name' => 'system.pages.twig_first',
                 'validation' => 'loose'
             ],
-            'system.pages.never_cache_twig' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG',
-                'highlight' => 0,
-                'options' => [
-                    1 => 'PLUGIN_ADMIN.YES',
-                    0 => 'PLUGIN_ADMIN.NO'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'system.pages.never_cache_twig',
-                'validation' => 'loose'
-            ],
             'system.pages.frontmatter' => [
                 'type' => '_parent',
                 'name' => 'system.pages.frontmatter',
@@ -844,14 +823,13 @@ return [
             ],
             'system.cache.check.method' => [
                 'type' => 'select',
-                'size' => 'medium',
+                'size' => 'small',
                 'classes' => 'fancy',
                 'label' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD',
                 'options' => [
-                    'file' => 'Markdown + Yaml file timestamps',
-                    'folder' => 'Folder timestamps',
-                    'hash' => 'All files timestamps',
-                    'none' => 'No timestamp checking'
+                    'file' => 'File',
+                    'folder' => 'Folder',
+                    'none' => 'None'
                 ],
                 'name' => 'system.cache.check.method',
                 'validation' => 'loose'
@@ -969,20 +947,6 @@ return [
                     'type' => 'bool'
                 ],
                 'name' => 'system.cache.gzip',
-                'validation' => 'loose'
-            ],
-            'system.cache.allow_webserver_gzip' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP',
-                'highlight' => 0,
-                'options' => [
-                    1 => 'PLUGIN_ADMIN.YES',
-                    0 => 'PLUGIN_ADMIN.NO'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'system.cache.allow_webserver_gzip',
                 'validation' => 'loose'
             ],
             'system.caching' => [
@@ -2827,7 +2791,6 @@ return [
             'site' => [
                 'content' => 'site.content',
                 'title' => 'site.title',
-                'default_lang' => 'site.default_lang',
                 'author' => [
                     'name' => 'site.author.name',
                     'email' => 'site.author.email'
@@ -2880,7 +2843,6 @@ return [
                     'ignore_folders' => 'system.pages.ignore_folders',
                     'url_taxonomy_filters' => 'system.pages.url_taxonomy_filters',
                     'twig_first' => 'system.pages.twig_first',
-                    'never_cache_twig' => 'system.pages.never_cache_twig',
                     'frontmatter' => [
                         'process_twig' => 'system.pages.frontmatter.process_twig',
                         'ignore_fields' => 'system.pages.frontmatter.ignore_fields'
@@ -2930,8 +2892,7 @@ return [
                     ],
                     'prefix' => 'system.cache.prefix',
                     'lifetime' => 'system.cache.lifetime',
-                    'gzip' => 'system.cache.gzip',
-                    'allow_webserver_gzip' => 'system.cache.allow_webserver_gzip'
+                    'gzip' => 'system.cache.gzip'
                 ],
                 'twig' => [
                     'cache' => 'system.twig.cache',

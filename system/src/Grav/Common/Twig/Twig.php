@@ -152,28 +152,21 @@ class Twig
 
             $this->grav->fireEvent('onTwigExtensions');
 
-            $base_url = $this->grav['base_url'] . $path_append;
-
             // Set some standard variables for twig
             $this->twig_vars = $this->twig_vars + [
                     'config'            => $config,
-                    'system'            => $config->get('system'),
-                    'theme'             => $config->get('theme'),
-                    'site'              => $config->get('site'),
                     'uri'               => $this->grav['uri'],
-                    'assets'            => $this->grav['assets'],
-                    'taxonomy'          => $this->grav['taxonomy'],
-                    'browser'           => $this->grav['browser'],
                     'base_dir'          => rtrim(ROOT_DIR, '/'),
-                    'base_url'          => $base_url,
+                    'base_url'          => $this->grav['base_url'] . $path_append,
                     'base_url_simple'   => $this->grav['base_url'],
                     'base_url_absolute' => $this->grav['base_url_absolute'] . $path_append,
                     'base_url_relative' => $this->grav['base_url_relative'] . $path_append,
-                    'home_url'          => $base_url == '' ?  '/' : $base_url,
                     'theme_dir'         => $locator->findResource('theme://'),
                     'theme_url'         => $this->grav['base_url'] . '/' . $locator->findResource('theme://', false),
-                    'html_lang'         => $this->grav['language']->getActive() ?: $config->get('site.default_lang', 'en'),
-
+                    'site'              => $config->get('site'),
+                    'assets'            => $this->grav['assets'],
+                    'taxonomy'          => $this->grav['taxonomy'],
+                    'browser'           => $this->grav['browser'],
                 ];
         }
     }
@@ -327,7 +320,6 @@ class Twig
 
         $twig_vars = $this->twig_vars;
 
-        $twig_vars['theme'] = $this->grav['config']->get('theme');
         $twig_vars['pages'] = $pages->root();
         $twig_vars['page'] = $page;
         $twig_vars['header'] = $page->header();

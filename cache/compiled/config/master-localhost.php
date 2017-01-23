@@ -1,17 +1,13 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1485157634,
-    'checksum' => '0a02cc78effbd8ebd0a5afb23afe1698',
+    'timestamp' => 1484586664,
+    'checksum' => 'd173f86acc5d60b4ec00b00fc95ff8a8',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1469516440
-            ],
-            'plugins/devtools' => [
-                'file' => 'user/config/plugins/devtools.yaml',
-                'modified' => 1485132585
             ],
             'plugins/error' => [
                 'file' => 'user/config/plugins/error.yaml',
@@ -31,7 +27,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1485157633
+                'modified' => 1484586656
             ],
             'themes/bones-vanilla' => [
                 'file' => 'user/config/themes/bones-vanilla.yaml',
@@ -41,25 +37,25 @@ return [
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1485132461
+                'modified' => 1483398353
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1485132461
+                'modified' => 1483395418
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1485132828
+                'modified' => 1483395418
             ]
         ],
         'user/plugins' => [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1485132655
+                'modified' => 1483395432
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/devtools.yaml',
@@ -67,7 +63,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1485132651
+                'modified' => 1483397285
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
@@ -505,7 +501,6 @@ return [
         ],
         'site' => [
             'title' => 'KIN & COMPANY',
-            'default_lang' => 'en',
             'author' => [
                 'name' => 'Kin',
                 'email' => 'joe@test.com'
@@ -597,7 +592,6 @@ return [
                     'twig' => false
                 ],
                 'twig_first' => false,
-                'never_cache_twig' => false,
                 'events' => [
                     'page' => true,
                     'twig' => true
@@ -655,7 +649,6 @@ return [
                 'prefix' => 'g',
                 'lifetime' => 604800,
                 'gzip' => false,
-                'allow_webserver_gzip' => false,
                 'redis' => [
                     'socket' => false
                 ]
@@ -690,7 +683,7 @@ return [
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => false,
+                'enabled' => true,
                 'shutdown' => [
                     'close_connection' => true
                 ],

@@ -306,12 +306,7 @@ class Grav extends Container
                 } else {
                     // Without gzip we have no other choice than to prevent server from compressing the output.
                     // This action turns off mod_deflate which would prevent us from closing the connection.
-                    if ($this['config']->get('system.cache.allow_webserver_gzip')) {
-                        header('Content-Encoding: identity');
-                    } else {
-                        header('Content-Encoding: none');
-                    }
-
+                    header('Content-Encoding: none');
                 }
 
 

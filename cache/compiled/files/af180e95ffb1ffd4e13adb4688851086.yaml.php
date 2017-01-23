@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/user/config/system.yaml',
-    'modified' => 1485157633,
+    'modified' => 1484586656,
     'data' => [
         'absolute_urls' => false,
         'param_sep' => ':',
@@ -127,7 +127,7 @@ return [
             'log' => true
         ],
         'debugger' => [
-            'enabled' => false,
+            'enabled' => true,
             'shutdown' => [
                 'close_connection' => true
             ],

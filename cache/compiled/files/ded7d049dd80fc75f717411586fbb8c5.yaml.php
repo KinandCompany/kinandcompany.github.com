@@ -2,10 +2,9 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/system/config/site.yaml',
-    'modified' => 1485132461,
+    'modified' => 1483398353,
     'data' => [
         'title' => 'Grav',
-        'default_lang' => 'en',
         'author' => [
             'name' => 'John Appleseed',
             'email' => 'john@email.com'

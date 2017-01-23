@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/system/config/streams.yaml',
-    'modified' => 1485132461,
+    'modified' => 1483395418,
     'data' => [
         'schemes' => [
             'image' => [

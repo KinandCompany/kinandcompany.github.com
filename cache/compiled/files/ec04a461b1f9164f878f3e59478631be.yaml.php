@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/system/blueprints/config/system.yaml',
-    'modified' => 1485132461,
+    'modified' => 1483395418,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SYSTEM',
         'form' => [
@@ -287,19 +287,6 @@ return [
                                 'type' => 'bool'
                             ]
                         ],
-                        'pages.never_cache_twig' => [
-                            'type' => 'toggle',
-                            'label' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG',
-                            'help' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG_HELP',
-                            'highlight' => 0,
-                            'options' => [
-                                1 => 'PLUGIN_ADMIN.YES',
-                                0 => 'PLUGIN_ADMIN.NO'
-                            ],
-                            'validate' => [
-                                'type' => 'bool'
-                            ]
-                        ],
                         'pages.frontmatter.process_twig' => [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.FRONTMATTER_PROCESS_TWIG',
@@ -558,15 +545,14 @@ return [
                         ],
                         'cache.check.method' => [
                             'type' => 'select',
-                            'size' => 'medium',
+                            'size' => 'small',
                             'classes' => 'fancy',
                             'label' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD',
                             'help' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD_HELP',
                             'options' => [
-                                'file' => 'Markdown + Yaml file timestamps',
-                                'folder' => 'Folder timestamps',
-                                'hash' => 'All files timestamps',
-                                'none' => 'No timestamp checking'
+                                'file' => 'File',
+                                'folder' => 'Folder',
+                                'none' => 'None'
                             ]
                         ],
                         'cache.driver' => [
@@ -657,19 +643,6 @@ return [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.GZIP_COMPRESSION',
                             'help' => 'PLUGIN_ADMIN.GZIP_COMPRESSION_HELP',
-                            'highlight' => 0,
-                            'options' => [
-                                1 => 'PLUGIN_ADMIN.YES',
-                                0 => 'PLUGIN_ADMIN.NO'
-                            ],
-                            'validate' => [
-                                'type' => 'bool'
-                            ]
-                        ],
-                        'cache.allow_webserver_gzip' => [
-                            'type' => 'toggle',
-                            'label' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP',
-                            'help' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP_HELP',
                             'highlight' => 0,
                             'options' => [
                                 1 => 'PLUGIN_ADMIN.YES',

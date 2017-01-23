@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/kin-grav/user/plugins/admin/admin.yaml',
-    'modified' => 1485132655,
+    'modified' => 1483395432,
     'data' => [
         'enabled' => true,
         'route' => '/admin',
