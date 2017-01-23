@@ -1,0 +1,25 @@
+{% embed 'partials/base.html.twig' %}
+
+
+
+	{% block content %}
+		<div id="work-menu">
+			<a href="selected">Selected</a> &nbsp;/&nbsp; <a href="all">All</a>
+		</div>
+
+		<div class="project-index selected">
+		{% for p in page.collection %}
+				<div class="project-teaser {%if p.taxonomy.tag != custom %}custom{% endif %}">
+					<a class="project-thumb" href="{{ p.url }}">{{ p.media['thumb.jpg'] }}</a>
+					<h2 class="project-title"><a href="{{ p.url }}">{{ p.title }}</a></h2>
+				</div>
+		{% endfor %}
+		</div>
+		
+
+	{% endblock %}
+	
+
+{% endembed %}
+
+

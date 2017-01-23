@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	
+<div class="project-wrapper">
+	{# <h2>{{page.title}}</h2> #}
+	<div class="project-content">
+    {{ page.content }}
+	</div>
+	<div class="project-pager">
+	{#	{% if not page.isFirst %}
+		<a href="{{ page.nextSibling.url }}">Previous</a>
+		{% endif %} #}
+		{% if not page.isLast %}
+		<a href="{{ page.prevSibling.url }}">Next</a>
+		{% endif %}
+
+	</div>
+</div>
+{% endblock %}

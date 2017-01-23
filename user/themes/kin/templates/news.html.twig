@@ -1,0 +1,18 @@
+{% embed 'partials/base.html.twig' %}
+
+	{% block content %}
+		<div class="project-wrapper">
+
+		{% for p in page.collection %}
+			<div class="news-content">
+
+				<div class="news-title">{{ p.title }}</div>
+				{{ p.content }}
+
+			</div>
+		{% endfor %}
+		</div>
+
+	{% endblock %}
+
+{% endembed %}
